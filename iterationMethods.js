@@ -46,31 +46,31 @@ const filteredAndTripled = (numbers) => {
 
 // 1) Using `logger` function log every element in an array
 function logger(array) {
-  array.forEach((element) => {
-    console.log(element); 
-  });
-}
+  array.forEach((element) =>  console.log(element))
+  };
 
 // 2) using `toCelsius` function return an array of temperatures in Celsius
 function toCelsius(temperatures) {
   // write your code here...
-  return temperatures.map(function(fahrenheit) {
-    return (fahrenheit - 32) * (5 / 9);
-  });
+  return temperatures.map((temp) =>
+   (temp- 32) * (5 / 9));
+  };
  
-}
+
 
 // 3) using `hottestDays` function return an array of temperatures that exceed the threshold
 function hottestDays(temperatures, threshold) {
   // write your code here...
-  return temperatures.filter(function(temp) {
-    return temp > threshold;
-  });
-}
+  return temperatures.filter((temp) =>
+  temp > threshold);
+  }
+
 
 // 4) Using `logHottestDays` function log temperatures that exceed the threshold to the console IN DEGREES CELSIUS  (hint: you can combine all previous functions)
 function logHottestDays(temperatures, threshold) {
-  return temperatures.filter((temperature) => temperature > threshold);
+  const tempFahernheit = hottestDays(temperatures, threshold);
+  const tempCelsius = toCelsius(tempFahernheit);
+  logger(tempCelsius);
 }
 
 module.exports = {
